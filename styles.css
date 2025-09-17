@@ -1,0 +1,199 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    /* Evita scroll global */
+    font-family: "Jost", sans-serif;
+}
+
+section p {
+
+    margin: auto;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/fondo.jpg);
+}
+
+
+.contenido {
+    flex: 1;
+    /* Ocupa todo el espacio sobrante */
+    overflow-y: auto;
+    /* Scroll solo en esta parte */
+    /*background-color: #f0f0f0;*/
+    padding: 20px;
+    padding-top: 150px;
+}
+
+
+/* Centrar el section #juego */
+#juego {
+  position: relative; /* necesario para posicionar el overlay respecto a este contenedor */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: auto;
+}
+
+/* Tablero 3x3 */
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+}
+
+/* Cada celda */
+.celda {
+  background-color: #fff;
+  border: 5px solid #40015E;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.celda:hover {
+  background-color: #e0e0e0;
+}
+
+/* Botones */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+
+/* Cartel de resultado flotante */
+#resultado {
+  position: absolute;
+  top: 50%;  /* centra verticalmente */
+  left: 50%; /* centra horizontalmente */
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,0.9); /* fondo semitransparente */
+  color: white;
+  padding: 100px 100px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 10; /* sobre el tablero */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+#resultado button {
+  background-color: #ffffff;
+}
+
+#resultado button:hover {
+  background-color: #40015E;
+}
+
+
+.contenido::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Edge, Safari */
+}
+
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+
+#randomLetter {
+    font-size: 72px;
+}
+
+.colu {
+    height: 95%;
+    border-radius: 12px;
+    margin: 10px;
+    background-color: #F5F5F5;
+    color: #0d0d0d;
+    border: solid #40015E 4px;
+}
+
+.column {
+    box-sizing: border-box;
+    width: 1fr;
+    display: flex;
+    flex-direction: column;
+}
+
+span {
+    font-size: 50px;
+}
+
+button {
+    margin: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 12px;
+    height: 72px;
+    background-color: #F5F5F5;
+    color: #0d0d0d;
+    border: solid #40015E 4px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #2e0142;
+    color: #dadada;
+}
+
+button:active {
+    background-color: #B51CFC;
+    color: #ffffff;
+}
+
+button:disabled {
+    background-color: #2e0142;
+    color: #ffffff;
+}
+
+#categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+
+
+
+.barra-derecha {
+    width: 25%;
+    background-color: #C956FF;
+    height: 100vh;
+    /* Alto de todo el viewport */
+    overflow: hidden;
+    /* Sin scroll */
+    position: sticky;
+    top: 0;
+    padding: 25px;
+}
